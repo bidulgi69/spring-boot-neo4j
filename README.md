@@ -14,7 +14,8 @@ spring boot + spring-data-neo4j<br>
 - Spring Data Neo4j
 
 ## Work Flow (Spring Batch)
-- 뉴스 **uri** 수집<br><br>
+- 뉴스 **uri** 수집<br>
+
 <img src="https://user-images.githubusercontent.com/17774927/200138166-119a04c4-bcc1-41e6-ba27-f82ba5ddb9f3.png"><br>
 <img src="https://user-images.githubusercontent.com/17774927/200138163-415fe131-ed7c-4ae4-ab9f-1d05c4b5fafc.png">
     1. Selenium, [Chrome Driver](https://chromedriver.chromium.org/downloads) 를 이용해 스크래핑을 수행합니다.
