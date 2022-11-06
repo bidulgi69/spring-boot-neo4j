@@ -14,10 +14,10 @@ spring boot + spring-data-neo4j<br>
 - Spring Data Neo4j
 
 ## Work Flow (Spring Batch)
-- 뉴스 **uri** 수집<br>
+- 뉴스 **uri** 수집<br><br>
+    <img src="https://user-images.githubusercontent.com/17774927/200138166-119a04c4-bcc1-41e6-ba27-f82ba5ddb9f3.png"><br>
+    <img src="https://user-images.githubusercontent.com/17774927/200138163-415fe131-ed7c-4ae4-ab9f-1d05c4b5fafc.png">
 
-<img src="https://user-images.githubusercontent.com/17774927/200138166-119a04c4-bcc1-41e6-ba27-f82ba5ddb9f3.png"><br>
-<img src="https://user-images.githubusercontent.com/17774927/200138163-415fe131-ed7c-4ae4-ab9f-1d05c4b5fafc.png">
     1. Selenium, [Chrome Driver](https://chromedriver.chromium.org/downloads) 를 이용해 스크래핑을 수행합니다.
     2. 데이터는 [네이버 뉴스](https://news.naver.com/)의 정치, 경제, 사회 카테고리의 뉴스 기사들을 활용합니다.
     3. 헤드라인 뉴스와 아래 페이지가 적용된 섹션 부분의 뉴스 기사들을 수집합니다. (1~10 페이지, 헤드라인 뉴스는 고정됨)
@@ -33,7 +33,8 @@ spring boot + spring-data-neo4j<br>
     2. 추출된 단어들은 Keyword Node 로 활용됩니다.
 <br><br>
 - 데이터베이스 갱신<br><br>
-<img src="https://user-images.githubusercontent.com/17774927/200138533-cea46651-d294-426f-b2fe-a5f1cf029753.png">
+    <img src="https://user-images.githubusercontent.com/17774927/200138533-cea46651-d294-426f-b2fe-a5f1cf029753.png">
+
     1. 그래프 데이터베이스는 다음과 같은 구조를 갖습니다.<br>
   Node 는 언론사(**Press**), 명사(**Keyword**)로 구성되며 두 Node 간의 관계는 **Written** 이라는 Relationship 으로 연결됩니다.<br>
   (Keyword)-[:Written]->(Press) 의 형태로 나타낼 수 있습니다.
