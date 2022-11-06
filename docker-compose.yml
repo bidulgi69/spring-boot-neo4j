@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  neo4j:
+    image: neo4j
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - $PWD/neo4j/conf:/conf
+      - $PWD/neo4j/data:/data
+      - $PWD/neo4j/import:/import
+      - $PWD/neo4j/logs:/logs
+      - $PWD/neo4j/plugins:/plugins
+    environment:
+      - NEO4J_dbms_logs_debug_level=DEBUG
+      - NEO4J_dbms_memory_pagecache_size=1G
+      - NEO4J_dbms.memory.heap.initial_size=1G
+      - NEO4J_dbms_memory_heap_max__size=1G
+
+  mysql:
+    platform: linux/x86_64
+    build: mysql/
+    ports:
+      - "3306:3306"
+    volumes:
+      - $PWD/mysql/conf:/etc/mysql/conf.d
+      - $PWD/mysql/data:/var/lib/mysql
+      - $PWD/mysql/log:/var/log/mysql
+      - $PWD/mysql/backup:/backup
+    environment:
+      - MYSQL_PORT=3306
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=batch_job
+    command: --default-authentication-plugin=mysql_native_password
