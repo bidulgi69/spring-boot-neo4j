@@ -1,4 +1,4 @@
-# spring-data-neo4j
+# spring-boot-neo4j
 spring boot + spring-data-neo4j<br>
 그래프 기반의 데이터베이스인 [neo4j](https://neo4j.com/)를 활용해 단순한 요구사항들을 구현해보는 프로젝트 
 
